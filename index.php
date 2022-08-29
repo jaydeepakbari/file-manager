@@ -27,6 +27,7 @@
 					$(el).find('input').val(files.path)
 				} else {
 					$(el).find("img").attr("src","https://via.placeholder.com/100x100?text=No%20Image")
+					$(el).find('input').val('')
 				}
 			}
 		});
