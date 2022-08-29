@@ -1,7 +1,7 @@
 # File manager
 File Manager is a wonderful widget that allows you to manage images and folders, pick images and folders, and do a lot more.
 
-![Preview](https://i.postimg.cc/0NG0bsv8/filemanager.png)
+![Preview](https://raw.githubusercontent.com/jaydeepakbari/file-manager/main/uploads/filemanager.png)
 
 ## Usage/Examples
 ```html
