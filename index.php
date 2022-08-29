@@ -14,24 +14,7 @@
 	  	<div class="file">
 	  		<img src="https://via.placeholder.com/100x100?text=No%20Image">
 	  	</div>
-	  	<div class="tools"></div>
-	</div>
-
-	<div class="file-chooser">
-		<div class="files-tools">
-			<button class="btn-filemanager btn-back">Back</button>
-			<button class="btn-filemanager btn-folder">Folder</button>
-			<button class="btn-filemanager btn-delete">Delete</button>
-		</div>
-		<div class="delete-warning">
-			<div>Choose files</div>
-			<div><button class="btn-filemanager btn-delete-confirm">Delete</button> <button class="btn-filemanager btn-delete-remove">Cancel</button></div>
-		</div>
-		<div class="empty">
-			No any images.
-		</div>
-
-		<div class="files"><ul></ul></div>
+	  	<input type="hidden" name="image" value="">
 	</div>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -41,6 +24,7 @@
 			callback:function(files,el) {
 				if(files.href){
 					$(el).find("img").attr("src",files.href)
+					$(el).find('input').val(files.path)
 				} else {
 					$(el).find("img").attr("src","https://via.placeholder.com/100x100?text=No%20Image")
 				}

@@ -1,9 +1,25 @@
 $.fn.fileManager = function(options) {
     var settings = $.extend({
         api: "server.php",
-        container: ".file-chooser"
     }, options );
-    
+
+    var container_class = "file-chooser-" + Date.now();
+    settings.container = "." + container_class;
+
+    $('body').append(`<div class="file-chooser ${container_class}">
+        <div class="files-tools">
+            <button class="btn-filemanager btn-back">Back</button>
+            <button class="btn-filemanager btn-folder">New Folder</button>
+            <button class="btn-filemanager btn-delete">Delete</button>
+        </div>
+        <div class="delete-warning">
+            <div>Choose files</div>
+            <div><button class="btn-filemanager btn-delete-confirm">Delete</button> <button class="btn-filemanager btn-delete-remove">Cancel</button></div>
+        </div>
+        <div class="empty">No any images.</div>
+        <div class="files"><ul></ul></div>
+    </div>`);
+
     var last_directory;
     function show() { 
         $(settings.container).show(); 
@@ -115,6 +131,8 @@ $.fn.fileManager = function(options) {
                 action: 'list',
             });
         })
+
+        
 
         $(settings.container).find('.btn-delete-confirm').click(function() {
             if(confirm("Are you sure to delete?")){

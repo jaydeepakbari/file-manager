@@ -9,7 +9,7 @@ File Manager is a wonderful widget that allows you to manage images and folders,
     <div class="file">
         <img src="https://via.placeholder.com/100x100?text=No%20Image">
     </div>
-    <div class="tools"></div>
+    <input type="hidden" name="image" value="">
 </div>
 ```
 
